@@ -4,6 +4,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "package.json"
@@ -18,7 +19,7 @@
   "homepage": "https://github.com/rainy-me/cron-infer#readme",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "yarn clean && tsup index.ts --format esm,cjs",
+    "build": "yarn clean && tsup index.ts --dts --format esm,cjs",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {

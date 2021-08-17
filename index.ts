@@ -95,7 +95,7 @@ type DayOfWeekMap = {
   "6": "Saturday";
 
   MON: "Monday";
-  TUES: "Tuesday";
+  TUE: "Tuesday";
   WED: "Wednesday";
   THU: "Thursday";
   FRI: "Friday";
@@ -173,7 +173,7 @@ type ReduceSpace<I> = I extends `${infer A}  ${infer B}`
   ? ReduceSpace<R>
   : I;
 
-type InferCron<CronString extends string> =
+export type InferCron<CronString extends string> =
   CronString extends `${infer Mi} ${infer H} ${infer DoM} ${infer Mo} ${infer DoW}`
     ? ReduceSpace<ClearErr<Print<Mi, H, DoM, Mo, DoW>>>
     : Err;
@@ -185,6 +185,8 @@ type InferCron<CronString extends string> =
  */
 export function Cron<Input extends string, _State = { when: InferCron<Input> }>(
   input: Input
-): string {
+): Input {
   return input;
 }
+
+Cron("15,30 2 */3 8 1-5");
