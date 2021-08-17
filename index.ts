@@ -190,5 +190,3 @@ export function Cron<Input extends string, _State = { when: InferCron<Input> }>(
 ): Input {
   return input;
 }
-
-Cron("15,30 2 */3 8 1-5");
