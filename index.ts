@@ -35,6 +35,8 @@ type N32to59 =
 
 type Hour = `${N0 | N1to6 | N7to12 | N13to23}`;
 type DayOfMonth = `${N1to6 | N7to12 | N13to23 | N24to31}`;
+
+// not using, the actually Month and DayOfWeek are checked from the map
 // type Month = `${N1to6 | N7to12}`;
 // type DayOfWeek = `${N0 | N1to6}`;
 
